@@ -19,28 +19,60 @@
 #include <malloc.h>
 #include <ctype.h>
 #include <math.h>
+
 #define MAX 0x3f3f3f3f
-#define DECIMAL_FLAG '.'
+
+#define OPEN_BRACKET '('
+#define CLOSE_BRACKET ')'
+#define DECIMAL '.'
+#define PLUS '+'
+#define MINUS '-'
+#define MULTIPLY '*'
+#define DIVISION '/'
+#define SQUARE_ROOT 'v'
+#define POWER '^'
+#define PERCENTAGE '%'
 
 #ifndef tree_H
 #define tree_H
 
+typedef struct TNode* addrNode;
+
 typedef struct  TNode{
-    int flag;
-    double data; //flag=0 
-    char ch; //flag=1
-    struct TNode * lChild;//Left child 
-    struct  TNode * rChild;//Right child 
+    bool isSymbol;
+    double number;
+    char symbol; 
+    addrNode leftChild;
+    addrNode rightChild;
 }Node;
 
-double cal(struct TNode *root);
+double calculate(addrNode root);
+/**
+ * Melakukan perhitungan terhadap suatu sub-tree
+ * Mengembalikan hasil perhitungan jika terdapat operator (root berisi operator)
+ * Mengembalikan nilai number jika tidak terdapat operator (root berisi number)
+ */
 
-double check(char s[],int start,int end);
+double checkString(char str[],int start,int end);
+/**
+ * Melakukan pengecekan terhadap suatu string
+ * Mengembalikan hasil konversi number jika tidak ditemukan operator pada string
+ * Mengembalikan nilai MAX jika terdapat operator pada string
+ */
 
-void postOrder(struct TNode *root);
+int findOperator(char str[],int start,int end);
+/**
+ * Menemukan operator dengan aturan derajat yang telah ditentukan
+ *  1. PLUS or MINUS
+ *  2. MULTIPLY or DIVISION
+ *  3. SQUARE_ROOT or PERCENTAGE or POWER
+ * Mengembalikan posisi operator tersebut dalam string
+ */
 
-struct TNode * buildTree(char s[],int start,int end);
-
-void mainDriver();
+addrNode constructTree(char str[],int start,int end);
+/**
+ * Membuat expression tree
+ * Mengembalikan tree yang telah berisi expression
+ */
 
 #endif

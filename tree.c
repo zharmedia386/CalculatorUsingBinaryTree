@@ -16,77 +16,78 @@
 #ifndef tree_C
 #define tree_C
 
-double cal(struct TNode *root){
-// fucntion to perform calculation of sub tree
-    if(root->flag==1){
-        switch(root->ch){
-            case '+':{
-                return cal(root->lChild)+cal(root->rChild);
+double calculate(addrNode root) {
+	
+	// root adalah operator
+    if(root->isSymbol){
+    	// Tentukan operand dan hitung
+        switch(root->symbol){
+            case PLUS:{
+                return calculate(root->leftChild) + calculate(root->rightChild);
                 break;
             }
-            case '-':{
-                return cal(root->lChild)-cal(root->rChild);
+            case MINUS:{
+                return calculate(root->leftChild) - calculate(root->rightChild);
                 break;
             }
-            case '/':{
-                return cal(root->lChild)/cal(root->rChild);
+            case DIVISION:{
+                return calculate(root->leftChild) / calculate(root->rightChild);
                 break;
             }
-            case '*':{
-                return cal(root->lChild)*cal(root->rChild);
+            case MULTIPLY:{
+                return calculate(root->leftChild) * calculate(root->rightChild);
                 break;
             }
-            case '^':{
-                return pow(cal(root->lChild),cal(root->rChild));
+            case POWER:{
+                return pow(calculate(root->leftChild),calculate(root->rightChild));
                 break;
             }
-            case '%':{
-                return (cal(root->lChild)*cal(root->rChild))/100;
+            case PERCENTAGE:{
+                return (calculate(root->leftChild)*calculate(root->rightChild))/100;
                 break;
             }
-            case 'v':{
-                return pow(cal(root->lChild),1/cal(root->rChild));
+            case SQUARE_ROOT:{
+                return pow(calculate(root->leftChild),1/calculate(root->rightChild));
                 break;
             }
         }
     }
-    return root->data;
+    
+    // root adalah operator
+    return root->number;
 }
 
-double check(char s[],int start,int end){
-    
-    // Kamus Data
-    int i;
-    double sum=0;
-    
+double checkString(char str[],int start,int end){
+	int i;
     int flag=1; // postive or negative flag
     int doubleFlag = 0;
+    double sum=0; // hasil konversi
+    double divFactor = 10.0; // bertambah 10x lipat semakin ke posisi kanan dari simbol desimal
     
-    double divFactor = 10.0; // bertambah 10x lipat semakin ke posisi kanan dari desimal
     
-    /* Algoritma */
-    
-    // Check negative flag
-    if(s[start]=='-'){
+    // Check apakah bilangan negatif
+    if (str[start] == MINUS){
         flag=-1;
         start++;
     }
     
-    // parse string ke number
-    for(i=start;i<=end;i++){
-        if(!isdigit(s[i]) && s[i] != '.') 
+    // Parsing string ke number
+    for (i = start; i <= end; i++){
+    	// Jika char adalah simbol operand dan bukan desimal
+        if (!isdigit(str[i]) && str[i] != DECIMAL) 
             return MAX;
         
-        // chek apakah string merupakan bilangan decimal
-        if(s[i] == DECIMAL_FLAG){
+        // Check apakah bilangan desimal
+        if (str[i] == DECIMAL){
             doubleFlag++;
             i++;
         }
         
-        if(!doubleFlag)
-            sum=sum*10+s[i]-'0';
+        // konversi char ke number
+        if (!doubleFlag)
+            sum=sum*10+str[i]-'0';
         else{
-            sum = sum + (s[i] - '0')/divFactor;
+            sum = sum + (str[i] - '0')/divFactor;
             divFactor *= 10;
         }
     }
@@ -94,79 +95,86 @@ double check(char s[],int start,int end){
     return sum*flag;
 }
 
-void postOrder(struct TNode *root){
-    if(root){
-        postOrder(root->lChild);
-        postOrder(root->rChild);
-        if(root->flag==0)
-            printf("%f ",root->data);
-        else
-            printf("%c ",root->ch);   
-    }
-} 
-
-struct TNode * buildTree(char s[],int start,int end){
-    struct TNode * root=(struct TNode *)malloc(sizeof(struct TNode));
-
-	// if there is no char left in s[]
-    if(start>end) return NULL;
-    
-    int posPlusOrSub=0;//Position of plus and minus signs 
+int findOperator(char str[],int start,int end) {
+	int posPlusOrSub=0;//Position of plus and minus signs 
     int numPlusOrSub=0;//Number of plus and minus signs 
     int posDivOrMul=0;//Multiply and divide sign position 
     int numDivOrMul=0;//Number of multiplication and division numbers
     int posPowOrPercent = 0; // Power and Percent sign position
     int numPowOrPercent = 0; // Number of the result after powering or percenting
-    
-    double num;
-    num=check(s,start,end);     
-    if(num!=0x3f3f3f3f){//Only numbers 
-        root->flag=0;
-        root->data=num;
-        root->lChild=NULL;
-        root->rChild=NULL;
-        return root;
-    }
-    
-    //There are operators 
-    int in_brackets=0;//Identifiers not in parentheses 
+ 
+    int in_brackets=0; //Identifiers not in parentheses 
     int k;
-    for(k=start;k<=end;k++){
-        if(s[k]=='(')
+    
+    // Tentukan jumlah dan posisi semua operator pada string
+    for(k = start; k <= end; k++){
+        if(str[k] == OPEN_BRACKET)
             in_brackets++;
-        else if(s[k]==')')
+        else if(str[k] == CLOSE_BRACKET)
             in_brackets--;
-        if(!in_brackets){//Outside the brackets 
-            if(s[k]=='+'||s[k]=='-'){
+        
+        // Jika diluar tanda kurung
+        if(!in_brackets){
+            if(str[k] == PLUS || str[k] == MINUS){
                 posPlusOrSub=k;
                 numPlusOrSub++;
             }
-            else if(s[k]=='*'||s[k]=='/'){
-                posDivOrMul=k;//Multiply and divide sign position 
-                numDivOrMul++;//Number of multiplication and division numbers 
+            else if(str[k] == MULTIPLY || str[k] == DIVISION){
+                posDivOrMul=k;
+                numDivOrMul++; 
             }
-            else if(s[k]=='^' || s[k]=='%' || s[k]=='v'){
+            else if(str[k] == POWER || str[k] == PERCENTAGE || str[k] == SQUARE_ROOT){
                 posPowOrPercent=k;
                 numPowOrPercent++;
             }
         }
     }
     
-    int pos_root;
-    //Find the root node with addition and subtraction 
-    if(numPlusOrSub)
-        pos_root=posPlusOrSub;
-    else if(numDivOrMul)
-        pos_root=posDivOrMul;
-    else if(numPowOrPercent)
-        pos_root=posPowOrPercent;
-    else //The root cannot be found 
-        return buildTree(s,start+1,end-1);
+    // posisi operator yang diprioritaskan
+    int posOperator = -1;
     
-    root->flag=1;
-    root->ch=s[pos_root];
-    root->lChild = buildTree(s,start,pos_root-1);
-    root->rChild = buildTree(s,pos_root+1,end);
+    //Temukan posisi root node dimulai dengan urutan operator derajat terendah
+    if(numPlusOrSub)
+        posOperator=posPlusOrSub;
+    else if(numDivOrMul)
+        posOperator=posDivOrMul;
+    else if(numPowOrPercent)
+        posOperator=posPowOrPercent;
+    
+    return posOperator;
+}
+
+addrNode constructTree(char str[],int start,int end){
+    addrNode root=(addrNode)malloc(sizeof(struct TNode));
+
+	// if there is no char left in s[]
+    if(start>end) 
+		return NULL;
+    
+    double num = checkString(str,start,end);
+	
+	// Jika string hanya berisi operand  
+    if(num!=0x3f3f3f3f){
+        root->isSymbol = false;
+        root->number = num;
+        root->leftChild = NULL;
+        root->rightChild = NULL;
+        return root;
+    }
+    
+    // Temukan posisi operator prioritas
+    int pos_root = findOperator(str, start, end);
+    
+    // Jika tidak ada operator
+    if(pos_root == -1) 
+        return constructTree(str,start+1,end-1);
+    
+    // membuat root berisi operator
+    root->isSymbol = true;
+    root->symbol = str[pos_root];
+    root->leftChild = constructTree(str,start,pos_root-1);
+    root->rightChild = constructTree(str,pos_root+1,end);
+    
     return root;
 }
 

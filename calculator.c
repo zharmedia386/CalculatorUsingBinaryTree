@@ -33,8 +33,8 @@ void calculator(){
             
         printf("The expression you entered is: %s\n",a);
         struct TNode* b=(struct TNode *)malloc(sizeof(struct TNode));
-        b=buildTree(a,0,strlen(a)-1);
-        double result = cal(b);
+        b=constructTree(a,0,strlen(a)-1);
+        double result = calculate(b);
         if(ceil(result) > result)
         	printf("Your result is %f float\n",result); 
 		else
