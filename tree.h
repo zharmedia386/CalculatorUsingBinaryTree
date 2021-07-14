@@ -48,6 +48,7 @@ typedef struct  TNode{
 
 double calculate(addrNode root);
 /**
+ * [Modified] From https://www.programmersought.com/article/95294413292/
  * Melakukan perhitungan terhadap suatu sub-tree
  * Mengembalikan hasil perhitungan jika terdapat operator (root berisi operator)
  * Mengembalikan nilai number jika tidak terdapat operator (root berisi number)
@@ -55,6 +56,7 @@ double calculate(addrNode root);
 
 double checkString(char str[],int start,int end);
 /**
+ * [Modified] From https://www.programmersought.com/article/95294413292/
  * Melakukan pengecekan terhadap suatu string
  * Mengembalikan hasil konversi number jika tidak ditemukan operator pada string
  * Mengembalikan nilai MAX jika terdapat operator pada string
@@ -71,6 +73,7 @@ int findOperator(char str[],int start,int end);
 
 addrNode constructTree(char str[],int start,int end);
 /**
+ * [Modified] From https://www.programmersought.com/article/95294413292/
  * Membuat expression tree
  * Mengembalikan tree yang telah berisi expression
  */
