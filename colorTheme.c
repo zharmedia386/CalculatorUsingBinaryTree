@@ -19,7 +19,7 @@ void chooseColorTheme(){
 	char temp[255];
 	FILE*pFile;
 		
-	pFile = fopen("ColorTheme.txt","r");
+	pFile = fopen("Folder teks/ColorTheme.txt","r");
 	while(fgets(temp,sizeof(temp),pFile))
 		printf("%s",temp);
 	fclose(pFile);

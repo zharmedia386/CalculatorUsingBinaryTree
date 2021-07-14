@@ -1,0 +1,45 @@
+			
+			
+			================================
+
+
+			 	  Color Theme
+
+
+			================================
+
+
+				* Bahasa Indonesia *
+
+	Saat memulai aplikasi anda akan diberikan pilihan fitur sebagai berikut :
+	[1] Start = Mengarahkan ke fitur kalkulasi matematika ilmiah sesuai kemauan anda.
+		keterangan : 
+			()	= pengelompokan operasi
+			^	= operasi pangkat
+			v	= operasi akar
+			*	= operasi perkalian
+			/	= operasi pembagian
+			+	= operasi penjumlahan
+			-	= operasi pengurangan
+	[2] Help = Mengarahkan ke user manual yang dapat anda baca.
+	[3] Color Theme = Mengarahkan ke fitur yang dapat mengubah warna tema aplikasi.
+	[4] Credit = Mengarahkan ke informasi credit aplikasi.
+	[5] Exit = Keluar dari program aplikasi.
+
+
+				* English *
+
+	When starting the application there will be choices of features as follows: :
+	[1] Start = Taking to the scientific mathematical calculation feature .
+		keterangan : 
+			()	grouping operation
+			^	= Exponentiation
+			v	= Root operation
+			*	= multiplication operation
+			/	= division operation
+			+	= addition operation
+			-	= subtraction operation
+	[2] Help = Taking to the user manual.
+	[3] Color Theme = Taking to the feature for setting up the color theme of the aplication.
+	[4] Credit = Taking to the credit information of the application.
+	[5] Exit = Exit from the program.

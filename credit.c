@@ -19,13 +19,13 @@ void credit(){
 		FILE *fptr;
 		
         // membuka file
-		if ((fptr = fopen("Credit.txt","r")) == NULL){
+		if ((fptr = fopen("Folder teks/Credit.txt","r")) == NULL){
             printf("Error: File tidak ada!");
             // Tutup program karena file gak ada.
             exit(1);
         }
 
-		while(fgets(buff,sizeof(buff),fptr))
-			printf("%s",buff);
+		while(fgets(buff, sizeof(buff), fptr))
+			printf("%s", buff);
 		fclose(fptr);
 }
