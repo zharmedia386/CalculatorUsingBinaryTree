@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
 
     // Memilih mainMenu
     int choice = 0;
-    scanf("%d",&choice);
+    scanf("%d", &choice);
 
     while(true){
         switch(choice){
@@ -39,6 +39,7 @@ int main(int argc, char** argv) {
                     if((int) input == KEYBOARD_ESCAPE) goto menu;
 		        }
                 break;
+            
             case 2 :
                 help();
                 while(true){
@@ -47,6 +48,7 @@ int main(int argc, char** argv) {
                     if((int) input == KEYBOARD_TAB) goto menu;
 		        }       
                 break;
+            
             case 3 :
                 chooseColorTheme();
                 scanf("%s",&kodeWarna);
@@ -57,6 +59,7 @@ int main(int argc, char** argv) {
                     if((int) input == KEYBOARD_ENTER) goto menu;
 		        }    
                 break;
+            
             case 4 :
                 credit();
                 while(true){
@@ -65,6 +68,7 @@ int main(int argc, char** argv) {
                     if((int) input == KEYBOARD_BACKSPACE) goto menu;
 		        }    
                 break;
+            
             case 5 :
                 exit(0);
                 break;

@@ -29,21 +29,22 @@ void calculator(){
         int i;
         printf("Please enter an expression:");
         fflush(stdin);
-        scanf("%s",a);
+        scanf("%s", a);
+
         // Menambahkan 0 di awal string, jika inputan indeks pertama negatif
-        
         if(a[0] == '-'){
-            for(i = strlen(a)-1; i >= 0; i--){
+            for(i=strlen(a)-1 ; i>=0 ; i--){
                 a[i+1] = a[i];
             }
+
             a[0] = '0';
         }
             
         // printf("The expression you entered is: %s\n",a);
-        struct TNode* b=(struct TNode *)malloc(sizeof(struct TNode));
-        b=constructTree(a,0,strlen(a)-1);
+        struct TNode* b = (struct TNode *)malloc(sizeof(struct TNode));
+        b = constructTree(a,0,strlen(a)-1);
         double result = calculate(b);
-        if(ceil(result) > result)
+        if (ceil(result) > result)
         	printf("Your result is %f\n",result); 
 		else
 			printf("Your result is %d\n",(int)result);

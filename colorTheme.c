@@ -17,11 +17,11 @@ char kodeWarna[1];
 void chooseColorTheme(){
 	system("cls");
 	char temp[255];
-	FILE*pFile;
+	FILE *pFile;
 		
 	pFile = fopen("Folder teks/ColorTheme.txt","r");
-	while(fgets(temp,sizeof(temp),pFile))
-		printf("%s",temp);
+	while(fgets(temp, sizeof(temp), pFile))
+		printf("%s", temp);
 	fclose(pFile);
 }
 
