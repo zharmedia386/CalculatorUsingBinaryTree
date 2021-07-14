@@ -61,11 +61,13 @@ void calculator(){
 
         system("cls");
         if (ceil(result) > result){
+            printf("\n\n");
             gridLayout1();
             printf("  \xB3  \xB3                             %f       \xB3   \xB3\n",result);
             gridLayout2();
         }
 		else{
+            printf("\n\n");
             gridLayout1();
             printf("  \xB3  \xB3                             %d       \xB3   \xB3\n",(int)result);
             gridLayout2();
