@@ -28,12 +28,23 @@ void calculator(){
         char a[200] = "\0";
         char batas;
         int i;
-        printf("\n\n");
-        gridLayout();
-        printf("\n  Please enter an expression:");
+        int inputKind = 0 ;
+
+        printf("Please enter an expression:");
         fflush(stdin);
-        scanf("%s",a);
-        printf("\n");
+        scanf("%s", a);
+
+        for(i=strlen(a)-1 ; i>=0 ; i--){
+
+            if(!isdigit(a[i])){
+                inputKind++;
+            }
+        }
+
+        if(strlen(a) == (inputKind)){
+            printf("Please input an invalid command\n");
+            break;
+        }
         // Menambahkan 0 di awal string, jika inputan indeks pertama negatif
         if(a[0] == '-'){
             for(i=strlen(a)-1 ; i>=0 ; i--){
