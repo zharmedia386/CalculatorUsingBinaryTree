@@ -37,7 +37,7 @@ void calculator(){
         b=buildTree(a,0,strlen(a)-1);
         double result = cal(b);
         if(ceil(result) > result)
-        	printf("Your result is %.2f\n",result); 
+        	printf("Your result is %f float\n",result); 
 		else
 			printf("Your result is %d\n",(int)result);   
     }

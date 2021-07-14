@@ -44,6 +44,10 @@ double cal(struct TNode *root){
                 return (cal(root->lChild)*cal(root->rChild))/100;
                 break;
             }
+            case 'v':{
+                return pow(cal(root->lChild),1/cal(root->rChild));
+                break;
+            }
         }
     }
     return root->data;
@@ -141,7 +145,7 @@ struct TNode * buildTree(char s[],int start,int end){
                 posDivOrMul=k;//Multiply and divide sign position 
                 numDivOrMul++;//Number of multiplication and division numbers 
             }
-            else if(s[k]=='^' || s[k]=='%'){
+            else if(s[k]=='^' || s[k]=='%' || s[k]=='v'){
                 posPowOrPercent=k;
                 numPowOrPercent++;
             }
