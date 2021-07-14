@@ -15,10 +15,36 @@ void main(){
     // printf( "   \xB3%-2s\xB3%-20s\xB3%-5s\xB3%-15s\xB3%-15s\xB3\n", "No", "Time", "Size", "Difficulty", "Winner" );
     // printf( "   \xC3\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xB4\n" );
 	char a = 37;
+	
+	// Frame 
+	printf("  \xDA\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBF\n");
+	printf("  \xB3                                            \xB3\n");
+	printf("  \xB3  \xDA\xC4\xC4\xC4\xC4\xC4                                        \xB3\n");
+	printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");
+	printf("  \xB3  \xDA\xC4\xC4\xC4\xC4\xC4\xBF\n");
+	printf("  \xB3  \xB3 Del \xB3\n");
+	printf("  \xB3  \xC0\xC4\xC4\xC4\xC4\xC4\xD9");
+	printf("               \xB3\n");
+	printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");printf("  \xB3                                            \xB3\n");
+	printf("  \xB3                                            \xB3\n");printf("  \xB3                                            \xB3\n");
+	printf("  \xC0\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xD9");
+	
     printf("\n\n");
-    printf("  \xDA\xC4\xC4\xC4\xC4\xC4\xBF\n");
-    printf("  \xB3 Del \xB3\n");
-    printf("  \xC0\xC4\xC4\xC4\xC4\xC4\xD9");
+    
+    
     
     printf("\n\n");
     printf("  \xDA\xC4\xC4\xC4\xC4\xC4\xBF\n");
