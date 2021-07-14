@@ -28,7 +28,9 @@ void calculator(){
         char a[200] = "\0";
         char batas;
         int i;
-        printf("\n\n  Please enter an expression:");
+        printf("\n\n");
+        gridLayout();
+        printf("\n  Please enter an expression:");
         fflush(stdin);
         scanf("%s",a);
         printf("\n");
@@ -45,6 +47,8 @@ void calculator(){
         struct TNode* b = (struct TNode *)malloc(sizeof(struct TNode));
         b = constructTree(a,0,strlen(a)-1);
         double result = calculate(b);
+
+        system("cls");
         if (ceil(result) > result){
             gridLayout1();
             printf("  \xB3  \xB3                             %f       \xB3   \xB3\n",result);
