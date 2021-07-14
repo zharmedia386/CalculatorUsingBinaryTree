@@ -30,6 +30,8 @@ void calculator(){
         int i;
         int inputKind = 0 ;
 
+        printf("\n\n");
+        gridLayout();
         printf("Please enter an expression:");
         fflush(stdin);
         scanf("%s", a);
@@ -40,11 +42,11 @@ void calculator(){
                 inputKind++;
             }
         }
-
         if(strlen(a) == (inputKind)){
             printf("Please input an invalid command\n");
             break;
         }
+
         // Menambahkan 0 di awal string, jika inputan indeks pertama negatif
         if(a[0] == '-'){
             for(i=strlen(a)-1 ; i>=0 ; i--){
