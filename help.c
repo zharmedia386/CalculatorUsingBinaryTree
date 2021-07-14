@@ -15,18 +15,18 @@
 #include <conio.h>
 
 void help(){
-		system("cls");
-		char buff[255];
-		FILE *fptr;
+	system("cls");
+	char buff[255];
+	FILE *fptr;
 		
-        // membuka file
-		if ((fptr = fopen("Folder teks/Help.txt","r")) == NULL){
-            printf("Error: File tidak ada!");
-            // Tutup program karena file gak ada.
-            exit(1);
-        }
+    // membuka file
+	if((fptr = fopen("Folder teks/Help.txt","r")) == NULL){
+        printf("Error: File tidak ada!");
+        exit(1); // Tutup program karena file gak ada.
+    }
 
-		while(fgets(buff, sizeof(buff), fptr))
-			printf("%s", buff);
-		fclose(fptr);
+	while(fgets(buff, sizeof(buff), fptr))
+		printf("%s", buff);
+	fclose(fptr);
+    printf("\n\n\n  Press TAB on your keyboard to main menu");
 }

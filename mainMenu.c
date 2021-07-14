@@ -11,6 +11,13 @@
     Compiler    : GCC 4.9.2 
 -------------------------------------- */
 
+#define KEYBOARD_TAB 9
+#define KEYBOARD_ENTER 13
+#define KEYBOARD_ESCAPE 27
+#define KEYBOARD_BACKSPACE 8
+#define KEYBOARD_F1 59
+#define KEYBOARD_HOME 71
+
 void mainMenu(){
 		system("cls");
 		printf("\n\n\t================================\n");

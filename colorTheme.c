@@ -96,4 +96,7 @@ void showColorTheme(char kodeWarna[]){
  		if(kodeWarna[0] == '9' && kodeWarna[1] == 'D') system("color 9D");
  		if(kodeWarna[0] == '9' && kodeWarna[1] == 'E') system("color 9E");
  		if(kodeWarna[0] == '9' && kodeWarna[1] == 'F') system("color 9F");
+
+	// Keluar
+		printf("\n\n\n  Press ENTER on your keyboard to main menu");
  }

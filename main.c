@@ -33,24 +33,37 @@ int main(int argc, char** argv) {
         switch(choice){
             case 1 :
                 calculator();
-                getch();
-                goto menu;
+                while(true){
+                    fflush(stdin);
+                    char input = getch();
+                    if((int) input == KEYBOARD_ESCAPE) goto menu;
+		        }
                 break;
             case 2 :
                 help();
-                getch();
+                while(true){
+                    fflush(stdin);
+                    char input = getch();
+                    if((int) input == KEYBOARD_TAB) goto menu;
+		        }       
                 break;
             case 3 :
                 chooseColorTheme();
                 scanf("%s",&kodeWarna);
                 showColorTheme(kodeWarna);
-                getch();
-                goto menu;
+                while(true){
+                    fflush(stdin);
+                    char input = getch();
+                    if((int) input == KEYBOARD_ENTER) goto menu;
+		        }    
                 break;
             case 4 :
                 credit();
-                getch();
-                goto menu;
+                while(true){
+                    fflush(stdin);
+                    char input = getch();
+                    if((int) input == KEYBOARD_BACKSPACE) goto menu;
+		        }    
                 break;
             case 5 :
                 exit(0);

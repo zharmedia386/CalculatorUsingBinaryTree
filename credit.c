@@ -14,18 +14,19 @@
 #include <conio.h>
 
 void credit(){
-		system("cls");
-		char buff[255];
-		FILE *fptr;
+	system("cls");
+	char buff[255];
+	FILE *fptr;
 		
-        // membuka file
-		if ((fptr = fopen("Folder teks/Credit.txt","r")) == NULL){
-            printf("Error: File tidak ada!");
-            // Tutup program karena file gak ada.
-            exit(1);
-        }
+    // membuka file
+	if ((fptr = fopen("Folder teks/Credit.txt","r")) == NULL){
+        printf("Error: File tidak ada!");
+        // Tutup program karena file gak ada.
+        exit(1);
+    }
 
-		while(fgets(buff, sizeof(buff), fptr))
-			printf("%s", buff);
-		fclose(fptr);
+	while(fgets(buff, sizeof(buff), fptr))
+		printf("%s", buff);
+	fclose(fptr);
+    printf("\n\n\n  Press BACKSPACE on your keyboard to main menu");
 }

@@ -16,6 +16,14 @@
 
 void calculator(){
     system("cls");
+
+    // Print Grid Calculator Layout
+    // printf( "  \xDA\xC4\xC4\xC2\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC2\xC4\xC4\xC4\xC4\xC4\xC2\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC2\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBF\n" );
+    // printf( "  \n      \xDA\xC4\xC4\xC4\xC4\xC4");
+    // printf( "  \xB3%-2s\xB3%-20s\xB3%-5s\xB3%-15s\xB3%-15s\xB3\n", "No", "Time", "Size", "Difficulty", "Winner" );
+    // printf( "  \xC3\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xB4\n" );
+
+    // Enter Expression and Show The Result
     while(1){
         char a[200] = "\0";
         int i;
@@ -31,13 +39,14 @@ void calculator(){
             a[0] = '0';
         }
             
-        printf("The expression you entered is: %s\n",a);
+        // printf("The expression you entered is: %s\n",a);
         struct TNode* b=(struct TNode *)malloc(sizeof(struct TNode));
         b=constructTree(a,0,strlen(a)-1);
         double result = calculate(b);
         if(ceil(result) > result)
-        	printf("Your result is %f float\n",result); 
+        	printf("Your result is %f\n",result); 
 		else
 			printf("Your result is %d\n",(int)result);
     }
+    printf("\n\n\n  Press ESCAPE on your keyboard to main menu");
 }

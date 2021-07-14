@@ -19,6 +19,7 @@
 #include <malloc.h>
 #include <ctype.h>
 #include <math.h>
+#include <unistd.h>
 
 #define MAX 0x3f3f3f3f
 

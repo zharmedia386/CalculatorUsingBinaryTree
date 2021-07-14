@@ -31,7 +31,10 @@ double calculate(addrNode root) {
                 break;
             }
             case DIVISION:{
-                return calculate(root->leftChild) / calculate(root->rightChild);
+                if(calculate(root->rightChild) == 0)
+                    printf("Math Error: Can't Divide by Zero\n");
+                else
+                    return calculate(root->leftChild) / calculate(root->rightChild);
                 break;
             }
             case MULTIPLY:{
