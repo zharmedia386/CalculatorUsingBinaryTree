@@ -20,28 +20,38 @@
 #include "credit.c"
 
 int main(int argc, char** argv) {
+
     // Main Menu
+    menu:
     mainMenu();
 
     // Memilih mainMenu
     int choice = 0;
-    scanf("%c",&choice);
+    scanf("%d",&choice);
 
     while(true){
         switch(choice){
-            case '1' :
+            case 1 :
                 calculator();
+                getch();
+                goto menu;
                 break;
-            case '2' :
+            case 2 :
                 // help();
                 break;
-            case '3' :
-                // colorTheme();
+            case 3 :
+                chooseColorTheme();
+                scanf("%s",&kodeWarna);
+                showColorTheme(kodeWarna);
+                getch();
+                goto menu;
                 break;
-            case '4' :
-                // credit();
+            case 4 :
+                credit();
+                getch();
+                goto menu;
                 break;
-            case '5' :
+            case 5 :
                 exit(0);
                 break;
         }

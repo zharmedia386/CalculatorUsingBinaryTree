@@ -10,3 +10,22 @@
     IDE         : DevC++, VS Code
     Compiler    : GCC 4.9.2 
 -------------------------------------- */
+#include <stdio.h>
+#include <conio.h>
+
+void credit(){
+		system("cls");
+		char buff[255];
+		FILE *fptr;
+		
+        // membuka file
+		if ((fptr = fopen("Credit.txt","r")) == NULL){
+            printf("Error: File tidak ada!");
+            // Tutup program karena file gak ada.
+            exit(1);
+        }
+
+		while(fgets(buff,sizeof(buff),fptr))
+			printf("%s",buff);
+		fclose(fptr);
+}
