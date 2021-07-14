@@ -6,6 +6,7 @@
 		- Muhammad Fauzi Rizki Hamdalah (201524015) 
     - Rifatia Yumna Salma (201524024)
 	Program			: Calculator Using Binary Tree
+  File        : tree.h
 	IDE     		: DevC++, VS Code
   Compiler    : GCC 4.9.2 
 -------------------------------------- */
@@ -13,6 +14,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include <time.h>
+#include <malloc.h>
 #include <ctype.h>
 #include <math.h>
 #define MAX 0x3f3f3f3f
@@ -36,5 +40,7 @@ double check(char s[],int start,int end);
 void postOrder(struct TNode *root);
 
 struct TNode * buildTree(char s[],int start,int end);
+
+void mainDriver();
 
 #endif

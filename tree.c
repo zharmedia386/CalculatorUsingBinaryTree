@@ -1,3 +1,16 @@
+/*
+    POLITEKNIK NEGERI BANDUNG
+    D4 Teknik Informatika - 1A
+    Developer : 
+        - Muhammad Azhar Alauddin (201524013)
+        - Muhammad Fauzi Rizki Hamdalah (201524015) 
+        - Rifatia Yumna Salma (201524024)
+    Program     : Calculator Using Binary Tree
+    File        : tree.c
+    IDE         : DevC++, VS Code
+    Compiler    : GCC 4.9.2 
+-------------------------------------- */
+
 #include "tree.h"
 
 #ifndef tree_C
@@ -61,17 +74,14 @@ double check(char s[],int start,int end){
             return MAX;
         
         // chek apakah string merupakan bilangan decimal
-        if(s[i] == DECIMAL_FLAG)
-        {
+        if(s[i] == DECIMAL_FLAG){
             doubleFlag++;
             i++;
-            
         }
         
         if(!doubleFlag)
             sum=sum*10+s[i]-'0';
-        else
-        {
+        else{
             sum = sum + (s[i] - '0')/divFactor;
             divFactor *= 10;
         }
@@ -84,12 +94,10 @@ void postOrder(struct TNode *root){
     if(root){
         postOrder(root->lChild);
         postOrder(root->rChild);
-        if(root->flag==0){
+        if(root->flag==0)
             printf("%f ",root->data);
-        }
-        else{
-            printf("%c ",root->ch);
-        }       
+        else
+            printf("%c ",root->ch);   
     }
 } 
 
@@ -102,7 +110,9 @@ struct TNode * buildTree(char s[],int start,int end){
     int posPlusOrSub=0;//Position of plus and minus signs 
     int numPlusOrSub=0;//Number of plus and minus signs 
     int posDivOrMul=0;//Multiply and divide sign position 
-    int numDivOrMul=0;//Number of multiplication and division numbers 
+    int numDivOrMul=0;//Number of multiplication and division numbers
+    int posPowOrPercent = 0; // Power and Percent sign position
+    int numPowOrPercent = 0; // Number of the result after powering or percenting
     
     double num;
     num=check(s,start,end);     
@@ -118,12 +128,10 @@ struct TNode * buildTree(char s[],int start,int end){
     int in_brackets=0;//Identifiers not in parentheses 
     int k;
     for(k=start;k<=end;k++){
-        if(s[k]=='('){
+        if(s[k]=='(')
             in_brackets++;
-        }
-        else if(s[k]==')'){
+        else if(s[k]==')')
             in_brackets--;
-        }
         if(!in_brackets){//Outside the brackets 
             if(s[k]=='+'||s[k]=='-'){
                 posPlusOrSub=k;
@@ -133,20 +141,23 @@ struct TNode * buildTree(char s[],int start,int end){
                 posDivOrMul=k;//Multiply and divide sign position 
                 numDivOrMul++;//Number of multiplication and division numbers 
             }
+            else if(s[k]=='^' || s[k]=='%'){
+                posPowOrPercent=k;
+                numPowOrPercent++;
+            }
         }
     }
     
     int pos_root;
     //Find the root node with addition and subtraction 
-    if(numPlusOrSub){
+    if(numPlusOrSub)
         pos_root=posPlusOrSub;
-    }
-    else if(numDivOrMul){
+    else if(numDivOrMul)
         pos_root=posDivOrMul;
-    }
-    else{//The root cannot be found 
+    else if(numPowOrPercent)
+        pos_root=posPowOrPercent;
+    else //The root cannot be found 
         return buildTree(s,start+1,end-1);
-    }
     
     root->flag=1;
     root->ch=s[pos_root];
