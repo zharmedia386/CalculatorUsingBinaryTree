@@ -21,7 +21,6 @@ void calculator(){
         int i;
         printf("Please enter an expression:");
         fflush(stdin);
-
         scanf("%s",a);
         // Menambahkan 0 di awal string, jika inputan indeks pertama negatif
         
@@ -39,6 +38,6 @@ void calculator(){
         if(ceil(result) > result)
         	printf("Your result is %f float\n",result); 
 		else
-			printf("Your result is %d\n",(int)result);   
+			printf("Your result is %d\n",(int)result);
     }
 }
