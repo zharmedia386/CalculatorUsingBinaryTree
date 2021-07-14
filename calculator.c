@@ -17,13 +17,14 @@
 void calculator(){
     system("cls");
     while(1){
-        char a[200];
+        char a[200] = "\0";
         int i;
         printf("Please enter an expression:");
         fflush(stdin);
 
         scanf("%s",a);
         // Menambahkan 0 di awal string, jika inputan indeks pertama negatif
+        
         if(a[0] == '-'){
             for(i = strlen(a)-1; i >= 0; i--){
                 a[i+1] = a[i];
