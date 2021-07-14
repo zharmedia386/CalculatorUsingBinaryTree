@@ -13,6 +13,7 @@
 
 #include "tree.h"
 #include "tree.c"
+#include "calculatorGridLayout.c"
 
 void calculator(){
     system("cls");
@@ -27,10 +28,10 @@ void calculator(){
         char a[200] = "\0";
         char batas;
         int i;
-        printf("Please enter an expression:");
+        printf("\n\n  Please enter an expression:");
         fflush(stdin);
         scanf("%s",a);
-        
+        printf("\n");
         // Menambahkan 0 di awal string, jika inputan indeks pertama negatif
         if(a[0] == '-'){
             for(i=strlen(a)-1 ; i>=0 ; i--){
@@ -44,11 +45,17 @@ void calculator(){
         struct TNode* b = (struct TNode *)malloc(sizeof(struct TNode));
         b = constructTree(a,0,strlen(a)-1);
         double result = calculate(b);
-        if (ceil(result) > result)
-        	printf("Your result is %f\n",result); 
-		else
-			printf("Your result is %d\n",(int)result);
-        printf("Lanjut? (y/t) : ");
+        if (ceil(result) > result){
+            gridLayout1();
+            printf("  \xB3  \xB3                             %f       \xB3   \xB3\n",result);
+            gridLayout2();
+        }
+		else{
+            gridLayout1();
+            printf("  \xB3  \xB3                             %d       \xB3   \xB3\n",(int)result);
+            gridLayout2();
+        }
+        printf("  Lanjut? (y/t) : ");
         fflush(stdin);
         scanf("%c",&batas);
         
