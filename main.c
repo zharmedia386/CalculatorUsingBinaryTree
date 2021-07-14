@@ -39,6 +39,7 @@ int main(int argc, char** argv) {
             case 2 :
                 help();
                 getch();
+                goto menu;
                 break;
             case 3 :
                 chooseColorTheme();
