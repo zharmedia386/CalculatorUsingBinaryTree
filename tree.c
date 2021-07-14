@@ -118,7 +118,7 @@ int findOperator(char str[],int start,int end) {
         
         // Jika diluar tanda kurung
         if(!in_brackets){
-            if(str[k] == PLUS || str[k] == MINUS && k != start){
+            if(str[k] == PLUS || str[k] == MINUS && k != start && isdigit(str[k-1])){
                 posPlusOrSub=k;
                 numPlusOrSub++;
             }
