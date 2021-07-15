@@ -25,6 +25,7 @@ void calculator(){
 
     // Enter Expression and Show The Result
     while(true){
+        system("cls");
         char a[200] = "\0";
         char batas;
         int i;
@@ -32,7 +33,7 @@ void calculator(){
 
         printf("\n\n");
         gridLayout();
-        printf("Please enter an expression:");
+        printf("  Please enter an expression:");
         fflush(stdin);
         scanf("%s", a);
 
@@ -43,7 +44,7 @@ void calculator(){
             }
         }
         if(strlen(a) == (inputKind)){
-            printf("Please input an invalid command\n");
+            printf("  Please input an invalid command\n");
             break;
         }
 
@@ -65,13 +66,23 @@ void calculator(){
         if (ceil(result) > result){
             printf("\n\n");
             gridLayout1();
-            printf("  \xB3  \xB3                             %f       \xB3   \xB3\n",result);
+            printf("  \xB3  \xB3");
+            printf("                          %-10s",a);
+            printf("  \xB3   \xB3\n");
+            printf("  \xB3  \xB3");
+            printf("                        = %-10f",result);
+            printf("  \xB3   \xB3\n");
             gridLayout2();
         }
 		else{
             printf("\n\n");
             gridLayout1();
-            printf("  \xB3  \xB3                             %d       \xB3   \xB3\n",(int)result);
+            printf("  \xB3  \xB3");
+            printf("                         %-10s",a);
+            printf("  \xB3   \xB3\n");
+            printf("  \xB3  \xB3");
+            printf("                       = %-10d",(int)result);
+            printf("  \xB3   \xB3\n");
             gridLayout2();
         }
         printf("  Lanjut? (y/t) : ");
