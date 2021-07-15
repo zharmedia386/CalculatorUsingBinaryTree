@@ -35,6 +35,7 @@ void calculator(){
         printf("Please enter an expression:");
         fflush(stdin);
         scanf("%s", a);
+        printf("\n\n");
 
         for(i=strlen(a)-1 ; i>=0 ; i--){
 
@@ -74,12 +75,24 @@ void calculator(){
             printf("  \xB3  \xB3                             %d       \xB3   \xB3\n",(int)result);
             gridLayout2();
         }
-        printf("  Lanjut? (y/t) : ");
-        fflush(stdin);
-        scanf("%c",&batas);
         
-        if(batas=='t')
+
+        while(true){
+
+            printf("  Continue? (y/n) : ");
+            fflush(stdin);
+            scanf("%c",&batas);
+            
+            if(batas=='y' || batas=='n'){
+                break;
+            } else{
+                printf("Please input an invalid command; y(yes), n(no)\n");
+            }
+        }
+        if(batas=='n'){
             break;
+        }
+
     }
     printf("\n\n\n  Press ESCAPE on your keyboard to main menu");
 }
