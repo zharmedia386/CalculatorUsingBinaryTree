@@ -47,6 +47,10 @@ typedef struct  TNode{
     addrNode rightChild;
 }Node;
 
+// VARIABEL GLOBAL
+char a[200] = "\0";
+double result;
+
 double calculate(addrNode root);
 /**
  * [Modified] From https://www.programmersought.com/article/95294413292/

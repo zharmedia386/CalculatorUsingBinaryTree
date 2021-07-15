@@ -18,6 +18,7 @@
 #include "help.c"
 #include "colorTheme.c"
 #include "credit.c"
+#include "history.c"
 
 int main(int argc, char** argv) {
 
@@ -61,6 +62,15 @@ int main(int argc, char** argv) {
                 break;
             
             case 4 :
+                readHistory();
+                while(true){
+                    fflush(stdin);
+                    char input = getch();
+                    if((int) input == KEYBOARD_F1) goto menu;
+		        }    
+                break;
+            
+            case 5 :
                 credit();
                 while(true){
                     fflush(stdin);
@@ -69,7 +79,7 @@ int main(int argc, char** argv) {
 		        }    
                 break;
             
-            case 5 :
+            case 6 :
                 exit(0);
                 break;
         }

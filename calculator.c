@@ -26,7 +26,7 @@ void calculator(){
     // Enter Expression and Show The Result
     while(true){
         system("cls");
-        char a[200] = "\0";
+        
         char batas;
         int i;
         int inputKind = 0 ;
@@ -61,17 +61,17 @@ void calculator(){
         // printf("The expression you entered is: %s\n",a);
         struct TNode* b = (struct TNode *)malloc(sizeof(struct TNode));
         b = constructTree(a,0,strlen(a)-1);
-        double result = calculate(b);
+        result = calculate(b);
 
         system("cls");
         if (ceil(result) > result){
             printf("\n\n");
             gridLayout1();
             printf("  \xB3  \xB3");
-            printf("                        %-14s",a);
+            printf("  %-35s",a);
             printf("\xB3   \xB3\n");
             printf("  \xB3  \xB3");
-            printf("                        = %-12f",result);
+            printf("  = %-33f",result);
             printf("\xB3   \xB3\n");
             gridLayout2();
         }
@@ -79,14 +79,15 @@ void calculator(){
             printf("\n\n");
             gridLayout1();
             printf("  \xB3  \xB3");
-            printf("                       %-14s",a);
+            printf("  %-35s",a);
             printf("\xB3   \xB3\n");
             printf("  \xB3  \xB3");
-            printf("                       = %-12d",(int)result);
+            printf("  = %-33d",(int)result);
             printf("\xB3   \xB3\n");
             gridLayout2();
         }
         
+        saveHistory();
 
         while(true){
 
