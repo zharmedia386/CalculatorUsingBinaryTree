@@ -22,8 +22,8 @@
 #include "splashScreen.c"
 
 int main(int argc, char** argv) {
-	// Show Splash Scree
-//	showSplashScreen();
+	// Show Splash Screen
+	showSplashScreen();
 	
     // Main Menu
     menu:
