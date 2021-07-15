@@ -49,13 +49,13 @@ int readHistory(){  //
     do{
         fseek(pFile,(-i)*sizeof(Record),SEEK_END);
         fread(&Record,sizeof(Record),1,pFile);
-        if(!feof(pFile) && i <= 18){
+        if(!feof(pFile) && i <= 30){
             if (ceil(Record.fresult) > Record.fresult)
                 printf("  \xB3 %-3d\xB3 %-19s\xB3 %-39s\xB3 %-19f\xB3\n", i++, Record.time, Record.ekspresi, Record.fresult);
             else
                 printf("  \xB3 %-3d\xB3 %-19s\xB3 %-39s\xB3 %-19d\xB3\n", i++, Record.time, Record.ekspresi, (int)Record.fresult);
         }
-    }while(!feof(pFile) && i <= 18);
+    }while(!feof(pFile) && i <= 30);
     printf( "  \xC0\xC4\xC4\xC4\xC4\xC1\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC1\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC1\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xD9" );
         
     fclose(pFile);
