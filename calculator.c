@@ -68,22 +68,22 @@ void calculator(){
             printf("\n\n");
             gridLayout1();
             printf("  \xB3  \xB3");
-            printf("                        %-10s  ",a);
-            printf("  \xB3   \xB3\n");
+            printf("                        %-14s",a);
+            printf("\xB3   \xB3\n");
             printf("  \xB3  \xB3");
-            printf("                        = %-10f",result);
-            printf("  \xB3   \xB3\n");
+            printf("                        = %-12f",result);
+            printf("\xB3   \xB3\n");
             gridLayout2();
         }
 		else{
             printf("\n\n");
             gridLayout1();
             printf("  \xB3  \xB3");
-            printf("                       %-10s  ",a);
-            printf("  \xB3   \xB3\n");
+            printf("                       %-14s",a);
+            printf("\xB3   \xB3\n");
             printf("  \xB3  \xB3");
-            printf("                       = %-10d",(int)result);
-            printf("  \xB3   \xB3\n");
+            printf("                       = %-12d",(int)result);
+            printf("\xB3   \xB3\n");
             gridLayout2();
         }
         
