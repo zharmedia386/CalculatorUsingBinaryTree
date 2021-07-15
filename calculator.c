@@ -68,7 +68,7 @@ void calculator(){
             printf("\n\n");
             gridLayout1();
             printf("  \xB3  \xB3");
-            printf("                          %-10s",a);
+            printf("                        %-10s  ",a);
             printf("  \xB3   \xB3\n");
             printf("  \xB3  \xB3");
             printf("                        = %-10f",result);
@@ -79,7 +79,7 @@ void calculator(){
             printf("\n\n");
             gridLayout1();
             printf("  \xB3  \xB3");
-            printf("                         %-10s",a);
+            printf("                       %-10s  ",a);
             printf("  \xB3   \xB3\n");
             printf("  \xB3  \xB3");
             printf("                       = %-10d",(int)result);
