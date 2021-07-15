@@ -19,9 +19,12 @@
 #include "colorTheme.c"
 #include "credit.c"
 #include "history.c"
+#include "splashScreen.c"
 
 int main(int argc, char** argv) {
-
+	// Show Splash Scree
+	showSplashScreen();
+	
     // Main Menu
     menu:
     mainMenu();
