@@ -50,7 +50,7 @@ double calculate(addrNode root) {
                 break;
             }
             case SQUARE_ROOT:{
-                return pow(calculate(root->leftChild), 1/calculate(root->rightChild));
+                return pow(calculate(root->rightChild), 1/calculate(root->leftChild));
                 break;
             }
         }

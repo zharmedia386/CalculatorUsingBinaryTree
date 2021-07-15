@@ -23,7 +23,7 @@
 
 int main(int argc, char** argv) {
 	// Show Splash Scree
-	showSplashScreen();
+//	showSplashScreen();
 	
     // Main Menu
     menu:
@@ -85,6 +85,8 @@ int main(int argc, char** argv) {
             case 6 :
                 exit(0);
                 break;
+            default :
+            	goto menu;
         }
     }
 
