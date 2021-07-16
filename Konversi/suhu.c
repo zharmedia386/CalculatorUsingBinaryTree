@@ -93,6 +93,9 @@ void suhu(){
                 printf("Please input an invalid command; y(yes), n(no)\n");
             }
         }
+        if (batasKonversi_suhu=='n'){
+            break;
+        }
 
     }
 }
