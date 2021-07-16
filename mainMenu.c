@@ -27,7 +27,8 @@ void mainMenu(){
 		printf("                 [2] Help     \n");
 		printf("                 [3] Color Theme     \n");
 		printf("                 [4] History     \n");
-        printf("                 [5] Credit     \n");
-		printf("                 [6] Exit     \n\n");
+        printf("                 [5] Konversi     \n");
+        printf("                 [6] Credit     \n");
+		printf("                 [7] Exit     \n\n");
 		printf("                Choose one : ");
 }

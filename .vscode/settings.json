@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "stdio.h": "c",
-    "tree.h": "c"
+    "tree.h": "c",
+    "conio.h": "c"
   }
 }

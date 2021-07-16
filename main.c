@@ -19,11 +19,12 @@
 #include "colorTheme.c"
 #include "credit.c"
 #include "history.c"
+#include "Konversi/konversiSatuan.c"
 #include "splashScreen.c"
 
 int main(int argc, char** argv) {
 	// Show Splash Screen
-	showSplashScreen();
+//	showSplashScreen();
 	
     // Main Menu
     menu:
@@ -74,6 +75,15 @@ int main(int argc, char** argv) {
                 break;
             
             case 5 :
+                konversiSatuan();
+                while(true){
+                    fflush(stdin);
+                    char input = getch();
+                    if((int) input == KEYBOARD_HOME) goto menu;
+		        }    
+                break;
+            
+            case 6 :
                 credit();
                 while(true){
                     fflush(stdin);
@@ -82,7 +92,7 @@ int main(int argc, char** argv) {
 		        }    
                 break;
             
-            case 6 :
+            case 7 :
                 exit(0);
                 break;
             default :
