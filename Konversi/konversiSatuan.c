@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "konversiGridLayout.c"
 #include "sistemBilangan.c"
+#include "konversiWaktu.c"
 
 void konversiMenu() {
   system("cls");
@@ -45,7 +46,7 @@ void konversiSatuan() {
         konversiSatuan();
         break;
       case 3:
-        // waktu();
+        konversiWaktu();
         printf("\n\n\n  Press any keys on your keyboard to main menu");
         getch();
         konversiSatuan();
