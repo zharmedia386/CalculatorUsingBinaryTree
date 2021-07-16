@@ -4,6 +4,7 @@
 #include "konversiGridLayout.c"
 #include "sistemBilangan.c"
 #include "konversiWaktu.c"
+#include "suhu.c"
 
 void konversiMenu() {
   system("cls");
@@ -34,7 +35,7 @@ void konversiSatuan() {
   while (true) {
     switch (choiceKonversi) {
       case 1:
-        // suhu();
+        suhu();
         printf("\n\n\n  Press any keys on your keyboard to main menu");
         getch();
         konversiSatuan();
