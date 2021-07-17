@@ -36,7 +36,6 @@ void suhu(){
                 
                 printInfoKonversi(celcius, reamur, fahrenheit, kelvin);
 
-                getch();
                 break;
 
             case 2 :
@@ -50,7 +49,6 @@ void suhu(){
                 
                 printInfoKonversi(celcius, reamur, fahrenheit, kelvin);
 
-                getch();
                 break;
 
             case 3 :
@@ -64,7 +62,6 @@ void suhu(){
                 
                 printInfoKonversi(celcius, reamur, fahrenheit, kelvin);
 
-                getch();
                 break;
             
             case 4 :
@@ -78,7 +75,6 @@ void suhu(){
                 
                 printInfoKonversi(celcius, reamur, fahrenheit, kelvin);
 
-                getch();
                 break;
         }
 

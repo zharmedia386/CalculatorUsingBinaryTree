@@ -17,7 +17,7 @@ void konversiMenu() {
   // printf("                 [4] History     \n");
   // printf("                 [5] Konversi     \n");
   // printf("                 [6] Credit     \n");
-  printf("                 [0] Exit     \n\n");
+  printf("                 [0] Back to Main Menu     \n\n");
   printf("                Choose one : ");
 }
 
@@ -27,8 +27,8 @@ void konversiSatuan() {
   // Menu Konversi
   int choiceKonversi = 0;
   // Grid Layout
-  // konversiGridLayout();
-  konversiMenu();
+  konversiGridLayout();
+  // konversiMenu();
   // KonversiMenu
   scanf("%d", &choiceKonversi);
 
