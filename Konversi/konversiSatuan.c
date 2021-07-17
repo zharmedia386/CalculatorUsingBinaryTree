@@ -27,8 +27,8 @@ void konversiSatuan() {
   // Menu Konversi
   int choiceKonversi = 0;
   // Grid Layout
-  konversiGridLayout();
-  // konversiMenu();
+//  konversiGridLayout();
+   konversiMenu();
   // KonversiMenu
   scanf("%d", &choiceKonversi);
 
