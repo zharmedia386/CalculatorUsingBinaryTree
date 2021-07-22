@@ -23,6 +23,8 @@ void chooseColorTheme(){
 	while(fgets(temp, sizeof(temp), pFile))
 		printf("%s", temp);
 	fclose(pFile);
+
+	scanf("%s",&kodeWarna);
 }
 
 void showColorTheme(char kodeWarna[]){
@@ -82,7 +84,7 @@ void showColorTheme(char kodeWarna[]){
  		if(kodeWarna[0] == '7' && kodeWarna[1] == 'D') system("color 7D");
  		if(kodeWarna[0] == '7' && kodeWarna[1] == 'E') system("color 7E");
  		if(kodeWarna[0] == '7' && kodeWarna[1] == 'F') system("color 7F");
-	//Gray
+	//Grey
 		if(kodeWarna[0] == '8' && kodeWarna[1] == 'A') system("color 8A");
  		if(kodeWarna[0] == '8' && kodeWarna[1] == 'B') system("color 8B");
  		if(kodeWarna[0] == '8' && kodeWarna[1] == 'C') system("color 8C");

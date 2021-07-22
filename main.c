@@ -56,7 +56,6 @@ int main(int argc, char** argv) {
             
             case 3 :
                 chooseColorTheme();
-                scanf("%s",&kodeWarna);
                 showColorTheme(kodeWarna);
                 while(true){
                     fflush(stdin);
