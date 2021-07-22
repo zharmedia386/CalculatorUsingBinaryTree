@@ -139,7 +139,7 @@ void fromSecond()
 }
 
 // Modul untuk mengkonversikan waktu
-int konversiWaktu()
+void konversiWaktu()
 {   
 	int choice;
 	
