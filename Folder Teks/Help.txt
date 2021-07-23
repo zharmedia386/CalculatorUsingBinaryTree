@@ -44,7 +44,7 @@
 		Sistem Bilangan	: Desimal, Biner, Oktal, dan Heksadesimal.
 		Waktu		: Jam, Menit, dan Detik.
 	
-	[4] Credit = Mengarahkan ke informasi credit aplikasi.
+	[6] Credit = Mengarahkan ke informasi credit aplikasi.
 	
-	[5] Exit = Keluar dari program aplikasi.
+	[7] Exit = Keluar dari program aplikasi.
 
