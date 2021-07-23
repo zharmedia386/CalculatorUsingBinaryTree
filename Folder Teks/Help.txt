@@ -12,34 +12,39 @@
 				* Bahasa Indonesia *
 
 	Saat memulai aplikasi anda akan diberikan pilihan fitur sebagai berikut :
-	[1] Start = Mengarahkan ke fitur kalkulasi matematika ilmiah sesuai kemauan anda.
-		keterangan : 
+	
+	[1] Start = menu yang berisikan fitur utama dari aplikasi ini yaitu kalkulasi matematika secara saintifik. Berikut langkah untuk menggunakan menu Start :
+		a. Pilih angka 1 untuk masuk ke menu Start
+		b. Saat masuk ke menu Start anda akan disuguhkan tampilan kalkulator dengan button yang memuat perhitungan apa saja yang dapat dilakukan oleh aplikasi
+		c. Fitur atau operasi yang terdapat pada program aplikasi ini di antaranya :
 			()	= pengelompokan operasi
 			^	= operasi pangkat
 			v	= operasi akar
 			*	= operasi perkalian
 			/	= operasi pembagian
+			%	= operasi pemersenan 
 			+	= operasi penjumlahan
 			-	= operasi pengurangan
+			Kalkulasi akan dilakukan dari operasi yang berderajat tertinggi dulu, derajat operasi telah diurutkan dari atas ke bawah pada list operasi di atas.
+			ket. untuk penulisan akar seperti 327 maka ditulis 3v27
+		d. Untuk melakukan kalkulasi masukkan angka dan ekspresi operasi yang akan dilakukan pada kolom kosong di tulisan “Please enter an expression:”
+		e. Klik enter dan hasil akan ditampilkan di kotak layar tampilan gambar kalkulator.
+		f. Setelah hasil ditampilkan maka anda akan diberikan pilihan lanjut atau selesai menghitung “Continue? (y/n) :”
+		g. Input “y” untuk melakukan kalkulasi lagi, input “n” untuk menghentikan kalkulasi
+		h. Jika anda memilih “n”, maka anda akan diberikan perintah “Press ESCAPE on your keyboard to main menu”, klik button Esc pada keyboard anda untuk kembali ke Main Menu.
+
 	[2] Help = Mengarahkan ke user manual yang dapat anda baca.
+	
 	[3] Color Theme = Mengarahkan ke fitur yang dapat mengubah warna tema aplikasi.
-	[4] Credit = Mengarahkan ke informasi credit aplikasi.
-	[5] Exit = Keluar dari program aplikasi.
+	
+	[4] History = History merupakan pilihan menu yang berisikan fitur yang dapat memberikan informasi 30 catatan terakhir operasi kalkulator yang telah dilakukan oleh aplikasi beserta waktunya kepada pengguna.
+	
+	[5] Konversi = Konversi merupakan pilihan menu yang berisikan fitur untuk mengubah atau mengkonversi tiga buah jenis satuan di antaranya suhu, sistem bilangan, dan waktu. Pada masing-masing jenis satuan pun terbagi lagi kepada beberapa bagian jenis.
+		Suhu		: Celcius, Reamur, Fahrenheit, dan Kelvin.
+		Sistem Bilangan	: Desimal, Biner, Oktal, dan Heksadesimal.
+		Waktu		: Jam, Menit, dan Detik.
+	
+	[6] Credit = Mengarahkan ke informasi credit aplikasi.
+	
+	[7] Exit = Keluar dari program aplikasi.
 
-
-				* English *
-
-	When starting the application there will be choices of features as follows: :
-	[1] Start = Taking to the scientific mathematical calculation feature .
-		keterangan : 
-			()	grouping operation
-			^	= Exponentiation
-			v	= Root operation
-			*	= multiplication operation
-			/	= division operation
-			+	= addition operation
-			-	= subtraction operation
-	[2] Help = Taking to the user manual.
-	[3] Color Theme = Taking to the feature for setting up the color theme of the aplication.
-	[4] Credit = Taking to the credit information of the application.
-	[5] Exit = Exit from the program.
