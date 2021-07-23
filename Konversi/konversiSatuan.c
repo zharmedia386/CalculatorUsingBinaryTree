@@ -36,19 +36,19 @@ void konversiSatuan() {
     switch (choiceKonversi) {
       case 1:
         suhu();
-        printf("\n\n\n  Press any keys on your keyboard to main menu");
+        printf("\n\n\n  Press any keys on your keyboard to conversion menu");
         getch();
         konversiSatuan();
         break;
       case 2:
         sistemBilangan();
-        printf("\n\n\n  Press any keys on your keyboard to main menu");
+        printf("\n\n\n  Press any keys on your keyboard to conversion menu");
         getch();
         konversiSatuan();
         break;
       case 3:
         konversiWaktu();
-        printf("\n\n\n  Press any keys on your keyboard to main menu");
+        printf("\n\n\n  Press any keys on your keyboard to conversion menu");
         getch();
         konversiSatuan();
         break;
@@ -59,7 +59,7 @@ void konversiSatuan() {
     }
     if(choiceKonversi == 0){
       system("cls");
-      printf("\n\n\n  Press HOME on your keyboard to main menu");
+      printf("\n\n\n  Press HOME on your keyboard to conversion menu");
     }
     break;
   }
