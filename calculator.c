@@ -36,7 +36,10 @@ void calculator(){
         printf("\n\n");
 
         for(i=strlen(a)-1 ; i>=0 ; i--){
-            if(!isdigit(a[i]))
+            if(!isdigit(a[i]) 	&& a[i] != MINUS && a[i] != PLUS 
+								&& a[i] != DIVISION && a[i] != MULTIPLY 
+								&& a[i] != POWER && a[i] != PERCENTAGE && a[i] != SQUARE_ROOT 
+								&& a[i] != DECIMAL && a[i] != OPEN_BRACKET && a[i] != CLOSE_BRACKET)
                 inputKind++;
         }
         if(inputKind > 0){
