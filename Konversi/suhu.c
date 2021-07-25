@@ -3,6 +3,7 @@
 #include <conio.h>
 #include <stdbool.h>
 #include <math.h>
+#include <time.h>
 
 void printInfoKonversi(float celcius, float reamur, float fahrenheit, float kelvin){
     printf(" -----------------------------------------------------\n");
@@ -18,10 +19,11 @@ void suhu(){
     char batasKonversi_suhu;
     int pilihan;
     float celcius, reamur, fahrenheit, kelvin;
-
+    // Anchor
+    suhu_anchor :
     while(true){
         system("cls");
-        printf("\n\n    Basis suhu masukan\n\n     [1] Celcius\n     [2] Reamur\n     [3] Fahrenheit\n     [4] Kelvin\n\n        Choose: ");
+        printf("\n\n    Basis suhu masukan\n\n     [1] Celcius\n     [2] Reamur\n     [3] Fahrenheit\n     [4] Kelvin\n     [0] Back to menu konversi\n\n     Choose: ");
         scanf("%d", &pilihan);
 
         switch(pilihan){
@@ -76,8 +78,13 @@ void suhu(){
                 printInfoKonversi(celcius, reamur, fahrenheit, kelvin);
 
                 break;
+            case 0 :
+                break;
+            default :
+                goto suhu_anchor;
         }
-
+        if(pilihan == 0)
+            break;
         while (true) {
             printf("\n\n  Continue? (y/n) : ");
             fflush(stdin);
@@ -86,7 +93,8 @@ void suhu(){
             if (batasKonversi_suhu == 'y' || batasKonversi_suhu == 'n') {
                 break;
             } else {
-                printf("Please input an invalid command; y(yes), n(no)\n");
+                printf("  Please input a valid input\n");
+                sleep(1);
             }
         }
         if (batasKonversi_suhu=='n'){

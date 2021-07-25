@@ -28,6 +28,7 @@ void konversiSatuan() {
   int choiceKonversi = 0;
   // Grid Layout
 //  konversiGridLayout();
+   konversi_anchor :
    konversiMenu();
   // KonversiMenu
   scanf("%d", &choiceKonversi);
@@ -38,27 +39,26 @@ void konversiSatuan() {
         suhu();
         printf("\n\n\n  Press any keys on your keyboard to conversion menu");
         getch();
-        konversiSatuan();
+        goto konversi_anchor;
         break;
       case 2:
         sistemBilangan();
         printf("\n\n\n  Press any keys on your keyboard to conversion menu");
         getch();
-        konversiSatuan();
+        goto konversi_anchor;
         break;
       case 3:
         konversiWaktu();
         printf("\n\n\n  Press any keys on your keyboard to conversion menu");
         getch();
-        konversiSatuan();
+        goto konversi_anchor;
         break;
       case 0 :
         break;
       default:
-        break;
+        goto konversi_anchor;
     }
     if(choiceKonversi == 0){
-      system("cls");
       printf("\n\n\n  Press HOME on your keyboard to conversion menu");
     }
     break;

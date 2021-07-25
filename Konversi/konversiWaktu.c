@@ -5,6 +5,7 @@
 #define HOUR 1
 #define MINUTE 2
 #define SECOND 3
+#define EXIT 0
 
 // Modul untuk menentukan apakah continue
 bool isContinue()
@@ -142,11 +143,12 @@ void fromSecond()
 void konversiWaktu()
 {   
 	int choice;
-	
+	// Anchor
+	waktu_anchor :
 	while(true)
 	{
 		system("ClS");
-		printf("\n\n    Konersikan Waktu Dari Satuan\n     1. Jam\n     2. Menit\n     3. Detik\n        Choose: ");
+		printf("\n\n    Konversikan Waktu Dari Satuan\n     1. Jam\n     2. Menit\n     3. Detik\n        0. Back to menu konversi\n        Choose: ");
 		scanf("%d", &choice);
 		
 		// perform convertion
@@ -163,13 +165,15 @@ void konversiWaktu()
 			case SECOND :
 				fromSecond();
 				break;
-			
+			case EXIT :
+				break;
 			default :
-				printf("Please input an invalid command; 1 Or 2 or 3\n");
+				goto waktu_anchor;
 		}
-    	
-    	// ask user to continue
-	    if (!isContinue())
-	      break;
+    if(choice == 0)
+			break;
+    // ask user to continue
+	  if (!isContinue())
+	    break;
 	}
 }

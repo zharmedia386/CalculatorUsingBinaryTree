@@ -16,12 +16,9 @@
 #include "calculatorGridLayout.c"
 
 void calculator(){
+    // Anchor
+    calculator_anchor :
     system("cls");
-    // Print Grid Calculator Layout
-    // printf( "  \xDA\xC4\xC4\xC2\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC2\xC4\xC4\xC4\xC4\xC4\xC2\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC2\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBF\n" );
-    // printf( "  \n      \xDA\xC4\xC4\xC4\xC4\xC4");
-    // printf( "  \xB3%-2s\xB3%-20s\xB3%-5s\xB3%-15s\xB3%-15s\xB3\n", "No", "Time", "Size", "Difficulty", "Winner" );
-    // printf( "  \xC3\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC5\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xB4\n" );
 
     // Enter Expression and Show The Result
     while(true){
@@ -39,14 +36,13 @@ void calculator(){
         printf("\n\n");
 
         for(i=strlen(a)-1 ; i>=0 ; i--){
-
-            if(!isdigit(a[i])){
+            if(!isdigit(a[i]))
                 inputKind++;
-            }
         }
-        if(strlen(a) == (inputKind)){
-            printf("  Please input an invalid command\n");
-            break;
+        if(inputKind > 0){
+            printf("  Please input a valid input\n");
+            sleep(1);
+            goto calculator_anchor;
         }
 
         // Menambahkan 0 di awal string, jika inputan indeks pertama negatif

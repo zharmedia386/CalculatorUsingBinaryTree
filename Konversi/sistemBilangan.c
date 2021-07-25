@@ -1,10 +1,8 @@
 #include <stdio.h>
-
 #include <string.h>
-
 #include <conio.h>
-
 #include <stdbool.h>
+#include <time.h>
 
 void cls() {
   int i;
@@ -106,9 +104,11 @@ void sistemBilangan() {
   int x, dec;
   char oct[6], bin[16], hex[4];
 
+  // Anchor
+  bilangan_anchor :
   while (true) {
     system("cls");
-    printf("\n\n    Basis Angka Masukan\n     1. Desimal\n     2. Biner\n     3. Oktal\n     4. Heksadesimal\n\n        Choose: ");
+    printf("\n\n    Basis Angka Masukan\n     1. Desimal\n     2. Biner\n     3. Oktal\n     4. Heksadesimal\n     0. Back to menu konversi\n\n     Choose: ");
     scanf("%d", & x);
     switch (x) {
       case 1:
@@ -162,9 +162,13 @@ void sistemBilangan() {
         biner(dec);
         printf("\n     Oktal: %o", dec);
         break;
-      default:
+      case 0 :
         break;
+      default:
+        goto bilangan_anchor;
     }
+    if(x == 0)
+      break;
     while (true) {
       printf("\n\n  Continue? (y/n) : ");
       fflush(stdin);
@@ -173,7 +177,8 @@ void sistemBilangan() {
       if (batasKonversi_bil == 'y' || batasKonversi_bil == 'n') {
         break;
       } else {
-        printf("Please input an invalid command; y(yes), n(no)\n");
+        printf("  Please input a valid input\n");
+        sleep(1);
       }
     }
     if (batasKonversi_bil == 'n') {
