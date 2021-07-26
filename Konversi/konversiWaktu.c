@@ -161,7 +161,7 @@ void konversiWaktu()
 	while(true)
 	{
 		system("ClS");
-		printf("\n\n    Konversikan Waktu Dari Satuan\n     1. Jam\n     2. Menit\n     3. Detik\n        0. Back to menu konversi\n        Choose: ");
+		printf("\n\n    Konversikan Waktu Dari Satuan\n     1. Jam\n     2. Menit\n     3. Detik\n     0. Back to menu konversi\n        Choose: ");
 		scanf("%d", &choice);
 		
 		// perform convertion
