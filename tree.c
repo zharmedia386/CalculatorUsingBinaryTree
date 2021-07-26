@@ -31,8 +31,11 @@ double calculate(addrNode root) {
                 break;
             }
             case DIVISION:{
-                if(calculate(root->rightChild) == 0)
-                    printf("Math Error: Can't Divide by Zero\n");
+                if(calculate(root->rightChild) == 0) {
+                	printf("Math Error: Can't Divide by Zero\n");
+                	sleep(1);
+                	return;
+				}
                 else
                     return calculate(root->leftChild) / calculate(root->rightChild);
                 break;
@@ -101,10 +104,10 @@ double checkString(char str[], int start, int end){
 int findOperator(char str[], int start, int end) {
 	int posPlusOrSub = 0;//Position of plus and minus signs 
     int numPlusOrSub = 0;//Number of plus and minus signs 
-    int posDivOrMul = 0;//Multiply and divide sign position 
-    int numDivOrMul = 0;//Number of multiplication and division numbers
-    int posPowOrPercent = 0; // Power and Percent sign position
-    int numPowOrPercent = 0; // Number of the result after powering or percenting
+    int posDivOrMul = 0;//Multiply and divide and percenting sign position 
+    int numDivOrMul = 0;//Number of multiplication and division and percenting numbers
+    int posPowOrRoot = 0; // Power and square root sign position
+    int numPowOrRoot = 0; // Number of the result after powering or square rooting
  
     int in_brackets = 0; //Identifiers not in parentheses 
     int k;
@@ -118,17 +121,23 @@ int findOperator(char str[], int start, int end) {
         
         // Jika diluar tanda kurung
         if(!in_brackets){
-            if(str[k] == PLUS || str[k] == MINUS && k != start && isdigit(str[k-1])){
-                posPlusOrSub = k;
-                numPlusOrSub++;
+            if(str[k] == PLUS || str[k] == MINUS){
+                // check apakah sebelumnya adalah operator
+				if (k != start && isdigit(str[k-1])) {
+					posPlusOrSub = k;
+                	numPlusOrSub++;	
+				}else if ((str[k-1] == OPEN_BRACKET || str[k-1] == CLOSE_BRACKET)) {
+					posPlusOrSub = k;
+                	numPlusOrSub++;	
+				}
             }
-            else if(str[k] == MULTIPLY || str[k] == DIVISION){
+            else if(str[k] == MULTIPLY || str[k] == DIVISION || str[k] == PERCENTAGE){
                 posDivOrMul = k;
                 numDivOrMul++; 
             }
-            else if(str[k] == POWER || str[k] == PERCENTAGE || str[k] == SQUARE_ROOT){
-                posPowOrPercent = k;
-                numPowOrPercent++;
+            else if(str[k] == POWER || str[k] == SQUARE_ROOT){
+                posPowOrRoot = k;
+                numPowOrRoot++;
             }
         }
     }
@@ -141,8 +150,8 @@ int findOperator(char str[], int start, int end) {
         posOperator = posPlusOrSub;
     else if(numDivOrMul)
         posOperator = posDivOrMul;
-    else if(numPowOrPercent)
-        posOperator = posPowOrPercent;
+    else if(numPowOrRoot)
+        posOperator = posPowOrRoot;
     
     return posOperator;
 }
