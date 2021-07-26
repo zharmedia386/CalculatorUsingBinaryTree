@@ -1,11 +1,15 @@
-# CalculatorUsingBinaryTree 🤖
-<!-- <p align="center">
-  <a href="https://rahuldkjain.github.io/gh-profile-readme-generator">
-    <img src="https://github.com/zharmedia386/BookstoreApp_GUI_PySide6_PyQt5/blob/main/images/SplashScreen.JPG" alt="drawing" width="800"/>
-  </a>
-</p> -->
-**Aplikasi kalkulator** seperti pada umumnya dimana user dapat menginput sebuah ekspresi aritmatika ke dalam aplikasi yang kemudian hasil dari ekspresi aritmatika inputan user tersebut akan ditampilkan. Pada aplikasi kalkulator ini, user dapat menginputkan angka, baik itu yang bertipe integer maupun float, kemudian operasi aritmatika seperti `penjumlahan(+)`, `pengurangan(-)`, `perkalian(x)`, `pembagian(/)`, `perpangkatan(^)`, `pengakaran(√)` dan juga `persenan(%)` dan juga ekspresi aritmatika yang dilengkapi dengan tanda kurung buka dan juga kurung tutup.
+<h1 align="center">CalculatorUsingBinaryTree 🤖</h1> 
 
+<p align="center">
+  <a href="https://rahuldkjain.github.io/gh-profile-readme-generator">
+    <img src="https://github.com/zharmedia386/CalculatorUsingBinaryTree/blob/main/Image/Rancangan%20Aplikasi-min.png" alt="drawing" width="600"/>
+  </a>
+</p>
+
+<!-- <p align="center">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Aplikasi kalkulator** seperti pada umumnya dimana user dapat menginput sebuah ekspresi aritmatika <br> ke dalam aplikasi yang kemudian hasil dari ekspresi aritmatikainputan user tersebut akan ditampilkan. Pada aplikasi kalkulator ini, user dapat menginputkan angka, baik itu yang bertipe integer maupun float, kemudian operasi aritmatika seperti <mark>penjumlahan(+)</mark>, `pengurangan(-)`, `perkalian(x)`, `pembagian(/)`, `perpangkatan(^)`, `pengakaran(√)` dan juga `persenan(%)` dan juga ekspresi aritmatika yang dilengkapi dengan tanda kurung buka dan juga kurung tutup.
+</p> -->
+  
 ## 🧐 Features
 
 - ```Calculator``` : Perhitungan ekspresi aritmatika
