@@ -58,12 +58,27 @@ void calculator(){
         }
             
         // printf("The expression you entered is: %s\n",a);
+        bool isSuccess = true;
         struct TNode* b = (struct TNode *)malloc(sizeof(struct TNode));
         b = constructTree(a,0,strlen(a)-1);
-        result = calculate(b);
+        result = calculate(b,&isSuccess);
 
         system("cls");
-        if (ceil(result) > result){
+        if(!isSuccess){
+            printf("\n\n");
+            gridLayout1();
+            printf("  \xB3  \xB3");
+            printf("  %-35s",a);
+            printf("\xB3   \xB3\n");
+            printf("  \xB3  \xB3");
+            // printf("  = %-33f",result);
+            printf("  = %-33s","Math Error: Can't Divide by Zero");
+            printf("\xB3   \xB3\n");
+            gridLayout2();
+            sleep(2);
+            goto calculator_anchor;
+        }
+        else if (ceil(result) > result){
             printf("\n\n");
             gridLayout1();
             printf("  \xB3  \xB3");

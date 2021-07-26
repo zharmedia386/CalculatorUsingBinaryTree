@@ -16,44 +16,43 @@
 #ifndef tree_C
 #define tree_C
 
-double calculate(addrNode root) {
+double calculate(addrNode root, bool *isSuccess) {
 	
 	// root adalah operator
     if(root->isSymbol){
     	// Tentukan operand dan hitung
         switch(root->symbol){
             case PLUS:{
-                return calculate(root->leftChild) + calculate(root->rightChild);
+                return calculate(root->leftChild,isSuccess) + calculate(root->rightChild,isSuccess);
                 break;
             }
             case MINUS:{
-                return calculate(root->leftChild) - calculate(root->rightChild);
+                return calculate(root->leftChild,isSuccess) - calculate(root->rightChild,isSuccess);
                 break;
             }
             case DIVISION:{
-                if(calculate(root->rightChild) == 0) {
-                	printf("Math Error: Can't Divide by Zero\n");
-                	sleep(1);
+                if(calculate(root->rightChild,isSuccess) == 0) {
+                    (*isSuccess) = false;
                 	return;
 				}
                 else
-                    return calculate(root->leftChild) / calculate(root->rightChild);
+                    return calculate(root->leftChild,isSuccess) / calculate(root->rightChild,isSuccess);
                 break;
             }
             case MULTIPLY:{
-                return calculate(root->leftChild) * calculate(root->rightChild);
+                return calculate(root->leftChild,isSuccess) * calculate(root->rightChild,isSuccess);
                 break;
             }
             case POWER:{
-                return pow(calculate(root->leftChild), calculate(root->rightChild));
+                return pow(calculate(root->leftChild,isSuccess), calculate(root->rightChild,isSuccess));
                 break;
             }
             case PERCENTAGE:{
-                return (calculate(root->leftChild) * calculate(root->rightChild))/100;
+                return (calculate(root->leftChild,isSuccess) * calculate(root->rightChild,isSuccess))/100;
                 break;
             }
             case SQUARE_ROOT:{
-                return pow(calculate(root->rightChild), 1/calculate(root->leftChild));
+                return pow(calculate(root->rightChild,isSuccess), 1/calculate(root->leftChild,isSuccess));
                 break;
             }
         }

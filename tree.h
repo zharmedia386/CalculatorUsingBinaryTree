@@ -51,7 +51,7 @@ typedef struct  TNode{
 char a[200] = "\0";
 double result;
 
-double calculate(addrNode root);
+double calculate(addrNode root, bool *isSuccess);
 /**
  * [Modified] From https://www.programmersought.com/article/95294413292/
  * Melakukan perhitungan terhadap suatu sub-tree
