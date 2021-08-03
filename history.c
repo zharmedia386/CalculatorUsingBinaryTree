@@ -17,12 +17,12 @@
 #include "tree.h"
 
 struct history{
-		char ekspresi[200];
+	char ekspresi[200];
     double fresult;
-		char time[100];
+	char time[100];
 }Record;
 
-int saveHistory(){
+int saveHistory(char *expression, double result){
     FILE* pFile = 0;
     struct history Record;
     time_t _time;
@@ -32,7 +32,7 @@ int saveHistory(){
 	  tmi = localtime (&_time);
     strftime (Record.time,100,"%d %b %Y %H:%M",tmi);
         
-    strcpy(Record.ekspresi, a);
+    strcpy(Record.ekspresi, expression);
     Record.fresult = result;
 
     fopen_s(&pFile,"history.dat","ab+"); // append and update binary, can be read

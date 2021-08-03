@@ -189,4 +189,14 @@ addrNode constructTree(char str[], int start, int end){
     return root;
 }
 
+void deleteTree(addrNode root) {
+	if (root == NULL)
+		return;
+	
+	deleteTree(root->leftChild);
+	deleteTree(root->rightChild);
+	
+	free(root);
+}
+
 #endif

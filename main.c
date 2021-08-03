@@ -14,7 +14,7 @@
 #include "tree.h"
 #include "tree.c"
 #include "mainMenu.c"
-#include "calculator.c"
+#include "calculatorMain.c"
 #include "help.c"
 #include "colorTheme.c"
 #include "credit.c"

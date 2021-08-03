@@ -83,4 +83,11 @@ addrNode constructTree(char str[],int start,int end);
  * Mengembalikan tree yang telah berisi expression
  */
 
+void deleteTree(addrNode root);
+/**
+ * Menghapus semua node pada tree
+ * IS : node pada tree tersedia
+ * FS : node pada tree telah di dealokasi
+ */
+
 #endif
