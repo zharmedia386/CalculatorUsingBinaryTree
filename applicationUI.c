@@ -10,6 +10,8 @@
     IDE         : DevC++, VS Code
     Compiler    : GCC 4.9.2 
 -------------------------------------- */
+#ifndef applicationUI_C
+#define applicationUI_C
 
 #include <stdio.h>
 #include <conio.h>
@@ -262,3 +264,4 @@ void credit(){
 }
 
 
+#endif

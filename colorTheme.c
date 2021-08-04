@@ -15,7 +15,7 @@
 
 chooseColorTheme() {
 
-	char kodeWarna[2]
+	char kodeWarna[2];
 	char temp[255];
 
 	showColorList();

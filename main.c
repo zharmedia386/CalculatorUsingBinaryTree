@@ -16,6 +16,7 @@
 #include "calculatorMain.c"
 #include "history.c"
 #include "Konversi/konversiSatuan.c"
+#include "colorTheme.c"
 #include "applicationUI.c"
 
 int main(int argc, char** argv) {
