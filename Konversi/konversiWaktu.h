@@ -45,36 +45,36 @@ bool isValidInput(float input);
 void printFormat(float number);
 /*
 - Menampilkan hasil konversi sesuai dengan format yang diinginkan
-- layar kosong
-- layar berisi isi variable dengan format yang telah ditentukan
+- IS : layar kosong
+- FS: layar berisi isi variable dengan format yang telah ditentukan
 */
 
 void fromHour(Waktu time);
 /*
 - Mengkonversi satuan jam ke satuan waktu lainnya dan menampilkannya ke layar
-- layar kosong
-- layar ditampilkan hasil konversi satuan jam ke satuan waktu lainnya
+- IS : layar kosong
+- FS : layar ditampilkan hasil konversi satuan jam ke satuan waktu lainnya
 */
 
 void fromMinute(Waktu time);
 /*
 - Mengkonversi satuan menit ke satuan waktu lainnya dan menampilkannya ke layar
-- layar kosong
-- layar ditampilkan hasil konversi satuan menit ke satuan waktu lainnya
+- IS : layar kosong
+- FS : layar ditampilkan hasil konversi satuan menit ke satuan waktu lainnya
 */
 
 void fromSecond(Waktu time);
 /*
 - Mengkonversi satuan detik ke satuan waktu lainnya dan menampilkannya ke layar
-- layar kosong
-- layar ditampilkan hasil konversi satuan detik ke satuan waktu lainnya
+- IS : layar kosong
+- FS : layar ditampilkan hasil konversi satuan detik ke satuan waktu lainnya
 */ 
 
 void konversiWaktu();
 /*
 - Melakukan konversi dari satuan waktu ke satuan waktu lainnya
-- layar kosong
-- menampilkan hasil konversi satuan waktu ke satuan waktu lainnya
+- IS : layar kosong
+- FS : menampilkan hasil konversi satuan waktu ke satuan waktu lainnya
 */
 
 

@@ -87,7 +87,7 @@ void showColorTheme(char kodeWarna[]){
 
 	// Keluar
 		printf("\n\n\n  Press ENTER on your keyboard to main menu");
- }
+}
  
 chooseColorTheme() {
 
