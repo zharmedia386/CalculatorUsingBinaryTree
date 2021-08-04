@@ -11,27 +11,22 @@
     Compiler    : GCC 4.9.2 
 -------------------------------------- */
 
-#include <stdio.h>
-#include <string.h>
-#include <conio.h>
-#include <stdbool.h>
-#include <math.h>
-#include <time.h>
+#include "suhu.h"
 
-void printInfoKonversi(float celcius, float reamur, float fahrenheit, float kelvin){
+void printInfoKonversi(Suhu suhu){
     printf(" -----------------------------------------------------\n");
     printf(" |                 KONVERSI SUHU                     |\n");
     printf(" -----------------------------------------------------\n");
     printf(" |  Celcius  |  Reamur   |   Fahrenheit |   Kelvin   |\n");
     printf(" -----------------------------------------------------\n");
-    printf(" |  %.2f    |  %.2f    |   %.2f      |   %.2f   |\n", celcius, reamur, fahrenheit, kelvin);
+    printf(" |  %.2f    |  %.2f    |   %.2f      |   %.2f   |\n", suhu.celcius, suhu.reamur, suhu.fahrenheit, suhu.kelvin);
     printf(" -----------------------------------------------------\n");
 }
 
 void suhu(){
     char batasKonversi_suhu;
     int pilihan;
-    float celcius, reamur, fahrenheit, kelvin;
+    Suhu suhu;
     // Anchor
     suhu_anchor :
     while(true){
@@ -43,52 +38,52 @@ void suhu(){
             case 1 :
                 system("cls");
                 printf("\n\n     Masukan nilai Celcius: ");
-                scanf("%f", &celcius);
+                scanf("%f", &suhu.celcius);
                 
-                reamur = celcius * 4/5;
-                fahrenheit = (celcius * 9/5) + 32;
-                kelvin = celcius + 273.15;
+                suhu.reamur = suhu.celcius * 4/5;
+                suhu.fahrenheit = (suhu.celcius * 9/5) + 32;
+                suhu.kelvin = suhu.celcius + 273.15;
                 
-                printInfoKonversi(celcius, reamur, fahrenheit, kelvin);
+                printInfoKonversi(suhu);
 
                 break;
 
             case 2 :
                 system("cls");
                 printf("\n\n     Masukan nilai Reamur: ");
-                scanf("%f", &reamur);
+                scanf("%f", &suhu.reamur);
 
-                celcius = reamur * 5/4;
-                fahrenheit = (reamur * 9/4) + 32;
-                kelvin = (reamur * 5/4) + 273.15;
+                suhu.celcius = suhu.reamur * 5/4;
+                suhu.fahrenheit = (suhu.reamur * 9/4) + 32;
+                suhu.kelvin = (suhu.reamur * 5/4) + 273.15;
                 
-                printInfoKonversi(celcius, reamur, fahrenheit, kelvin);
+                printInfoKonversi(suhu);
 
                 break;
 
             case 3 :
                 system("cls");
                 printf("\n\n     Masukan nilai Fahrenheit: ");
-                scanf("%f", &fahrenheit);
+                scanf("%f", &suhu.fahrenheit);
 
-                celcius = (fahrenheit-32) * 5/9;
-                reamur = (fahrenheit-32) * 4/9;
-                kelvin = ((fahrenheit-32) * 5/9) + 273.15;
+                suhu.celcius = (suhu.fahrenheit-32) * 5/9;
+                suhu.reamur = (suhu.fahrenheit-32) * 4/9;
+                suhu.kelvin = ((suhu.fahrenheit-32) * 5/9) + 273.15;
                 
-                printInfoKonversi(celcius, reamur, fahrenheit, kelvin);
+                printInfoKonversi(suhu);
 
                 break;
             
             case 4 :
                 system("cls");
                 printf("\n\n     Masukan nilai Kelvin: ");
-                scanf("%f", &kelvin);
+                scanf("%f", &suhu.kelvin);
 
-                celcius =  kelvin - 273.15;
-                reamur = (kelvin - 273.15) * 4/5;
-                fahrenheit =  ((kelvin - 273.15) * 9/5) + 32;
+                suhu.celcius =  suhu.kelvin - 273.15;
+                suhu.reamur = (suhu.kelvin - 273.15) * 4/5;
+                suhu.fahrenheit =  ((suhu.kelvin - 273.15) * 9/5) + 32;
                 
-                printInfoKonversi(celcius, reamur, fahrenheit, kelvin);
+                printInfoKonversi(suhu);
 
                 break;
             case 0 :

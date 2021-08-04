@@ -11,14 +11,7 @@
     Compiler    : GCC 4.9.2 
 -------------------------------------- */
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <math.h>
-
-#define HOUR 1
-#define MINUTE 2
-#define SECOND 3
-#define EXIT 0
+#include "konversiWaktu.h"
 
 // Modul untuk menentukan apakah continue
 bool isContinue()
@@ -57,104 +50,101 @@ void printFormat(float number)
 }
 
 // modul untuk mengkonversi jam ke satuan waktu lain
-void fromHour()
+void fromHour(Waktu time)
 {
-	float hour, minute, second; 
-	
 	// validation until correct input
 	while(true)
 	{
 		printf("\n    Masukan Jam : ");
-		scanf("%f", & hour);
+		scanf("%f", &time.hour);
 		
-		if(isValidInput(hour))
+		if(isValidInput(time.hour))
 			break;
 		else
 			printf("    Your input is not valid\n");
 	}
 	
 	printf("\n    ");
-	printFormat(hour);
+	printFormat(time.hour);
 	printf(" Jam : \n");
 	
-	minute = hour * 60.0;
+	time.minute = time.hour * 60.0;
 	printf("       \xB3\n       \xC0\xC4 ");
-	printFormat(minute);
+	printFormat(time.minute);
 	printf(" menit\n");
 	
-	second = hour * 3600.0;
+	time.second = time.hour * 3600.0;
 	printf("       \xB3\n       \xC0\xC4 ");
-	printFormat(second);
+	printFormat(time.second);
 	printf(" detik\n");
 }
 
 // modul untuk mengkonversi menit ke satuan waktu lain
-void fromMinute()
+void fromMinute(Waktu time)
 {
-	float hour, minute, second;
 	
 	// validation until correct input
 	while(true)
 	{
 		printf("\n    Masukan Menit : ");
-		scanf("%f", & minute);
+		scanf("%f", &time.minute);
 		
-		if(isValidInput(minute))
+		if(isValidInput(time.minute))
 			break;
 		else
 			printf("    Your input is not valid\n");
 	}
 	
 	printf("\n    ");
-	printFormat(minute);
+	printFormat(time.minute);
 	printf(" Menit : \n");
 	
-	hour = minute / 60.0;
+	time.hour = time.minute / 60.0;
 	printf("       \xB3\n       \xC0\xC4 ");
-	printFormat(hour);
+	printFormat(time.hour);
 	printf(" jam\n");
 	
-	second = minute * 60.0;
+	time.second = time.minute * 60.0;
 	printf("       \xB3\n       \xC0\xC4 ");
-	printFormat(second);
+	printFormat(time.second);
 	printf(" detik\n");
 }
 
 // modul untuk mengkonversi detik ke satuan waktu lain
-void fromSecond()
+void fromSecond(Waktu time)
 {
-	float hour, minute, second;
 	
 	// validation until correct input
 	while(true)
 	{
 		printf("\n    Masukan Detik : ");
-		scanf("%f", & second);
+		scanf("%f", &time.second);
 		
-		if(isValidInput(minute))
+		if(isValidInput(time.minute))
 			break;
 		else
 			printf("    Your input is not valid\n");
 	}
 	
 	printf("\n    ");
-	printFormat(second);
+	printFormat(time.second);
 	printf(" Detik : \n");
 	
-	hour = second / 3600.0;
+	time.hour = time.second / 3600.0;
 	printf("       \xB3\n       \xC0\xC4 ");
-	printFormat(hour);
+	printFormat(time.hour);
 	printf(" jam\n");
 	
-	minute = second / 60.0;
+	time.minute = time.second / 60.0;
 	printf("       \xB3\n       \xC0\xC4 ");
-	printFormat(minute);
+	printFormat(time.minute);
 	printf(" menit\n");
 }
 
 // Modul untuk mengkonversikan waktu
 void konversiWaktu()
 {   
+	Waktu time;
 	int choice;
 	// Anchor
 	waktu_anchor :
@@ -168,15 +158,15 @@ void konversiWaktu()
 		switch(choice)
 		{
 			case HOUR :
-				fromHour();
+				fromHour(time);
 				break;
 			
 			case MINUTE :
-				fromMinute();
+				fromMinute(time);
 				break;
 			
 			case SECOND :
-				fromSecond();
+				fromSecond(time);
 				break;
 			case EXIT :
 				break;
