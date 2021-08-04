@@ -12,7 +12,73 @@
 -------------------------------------- */
 
 #include <stdio.h>
+#include <conio.h>
+#include <unistd.h>
 
+#define KEYBOARD_TAB 9
+#define KEYBOARD_ENTER 13
+#define KEYBOARD_ESCAPE 27
+#define KEYBOARD_BACKSPACE 8
+#define KEYBOARD_F1 59
+#define KEYBOARD_HOME 71
+
+//SPLASH SCREEN
+// ROS THREE
+const char teamTxt[] =
+"\t    ______     ______     ______        ______   __  __     ______     ______     ______\n\
+\t   /\\  == \\   /\\  __ \\   /\\  ___\\      /\\__  _\\ /\\ \\_\\ \\   /\\  == \\   /\\  ___\\   /\\  ___\n\
+\t   \\ \\  __<   \\ \\ \\/\\ \\  \\ \\ \\____     \\/_/\\ \\/ \\ \\  __ \\  \\ \\  __<   \\ \\  __\\   \\ \\  __\\ \n\
+\t    \\ \\_\\ \\_\\  \\ \\_____\\  \\ \\_____\\       \\ \\_\\  \\ \\_\\ \\_\\  \\ \\_\\ \\_\\  \\ \\_____\\  \\ \\_____\\\n\
+\t     \\/_/ /_/   \\/_____/   \\/_____/        \\/_/   \\/_/\\/_/   \\/_/ /_/   \\/_____/   \\/_____/\n\
+";
+
+// PRESENT
+const char presentTxt[] =
+"\t\t\t\t  ______   ______     ______     ______     ______     __   __     ______\n\
+\t\t\t\t /\\  == \\ /\\  == \\   /\\  ___\\   /\\  ___\\   /\\  ___\\   /\\ \"-.\\ \\   /\\__  _\\\n\
+\t\t\t\t \\ \\  _-/ \\ \\  __<   \\ \\  __\\   \\ \\___  \\  \\ \\  __\\   \\ \\ \\-.  \\  \\/_/\\ \\/\n\
+\t\t\t\t  \\ \\_\\    \\ \\_\\ \\_\\  \\ \\_____\\  \\/\\_____\\  \\ \\_____\\  \\ \\_\\\\\"\\_\\    \\ \\_\\\n\
+\t\t\t\t   \\/_/     \\/_/ /_/   \\/_____/   \\/_____/   \\/_____/   \\/_/ \\/_/     \\/_/\n\
+";
+
+void showSplashScreen() {
+	int i, j;
+	
+	// lompat ke bagian bawah console
+    for ( i = 0; i < 150; i++) 
+		printf("\n"); 
+	
+	printf("%s\n", teamTxt);
+	printf("%s\n", presentTxt);
+	
+	// [modified] from http://HelloACM.com, http://CodingForSpeed.com
+    j = 300000;
+    for (i = 0; i < 28; i ++) {
+        usleep(j); // bergerak lebih cepat
+        j = (int)(j * 0.9); // mengurangi durasi sleep setiap perulangan
+        printf("\n"); // bergerak sebaris keatas
+    }
+}
+
+//MAIN MENU
+void mainMenu(){
+		system("cls");
+		printf("\n\n\t================================\n");
+		printf("\n\t\t  MAIN MENU\n\n");
+		printf(" \t================================\n\n");
+		printf("                 [1] Start     \n");
+		printf("                 [2] Help     \n");
+		printf("                 [3] Color Theme     \n");
+		printf("                 [4] History     \n");
+        printf("                 [5] Konversi     \n");
+        printf("                 [6] Credit     \n");
+		printf("                 [7] Exit     \n\n");
+		printf("                Choose one : ");
+}
+
+//CALCULATOR
+
+//Calculator Grid Layout
 void gridLayout(){
 	char a = 37;
 	// Frame
@@ -141,3 +207,58 @@ void gridLayout2(){
 	
     printf("\n\n");
 }
+
+
+// FILE PRINTING
+//Help
+void help(){
+	system("cls");
+	char buff[255];
+	FILE *fptr;
+		
+    // membuka file
+	if((fptr = fopen("Folder teks/Help.txt","r")) == NULL){
+        printf("Error: File tidak ada!");
+        exit(1); // Tutup program karena file gak ada.
+    }
+
+	while(fgets(buff, sizeof(buff), fptr))
+		printf("%s", buff);
+	fclose(fptr);
+    printf("\n\n\n  Press TAB on your keyboard to main menu");
+}
+
+//Color Theme
+void showColorList(){
+
+	system("cls");
+	char temp[255];
+	FILE *pFile;
+		
+	pFile = fopen("Folder teks/ColorTheme.txt","r");
+	while(fgets(temp, sizeof(temp), pFile))
+		printf("%s", temp);
+	fclose(pFile);
+
+}
+
+//Credit
+void credit(){
+	system("cls");
+	char buff[255];
+	FILE *fptr;
+		
+    // membuka file
+	if ((fptr = fopen("Folder teks/Credit.txt","r")) == NULL){
+        printf("Error: File tidak ada!");
+        // Tutup program karena file gak ada.
+        exit(1);
+    }
+
+	while(fgets(buff, sizeof(buff), fptr))
+		printf("%s", buff);
+	fclose(fptr);
+    printf("\n\n\n  Press BACKSPACE on your keyboard to main menu");
+}
+
+

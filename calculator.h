@@ -15,7 +15,7 @@
 
 #include "tree.h"
 #include "tree.c"
-#include "calculatorGridLayout.c"
+#include "applicationUI.c"
 #include <stdbool.h>
 
 typedef struct {

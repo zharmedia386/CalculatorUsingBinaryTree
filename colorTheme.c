@@ -11,20 +11,16 @@
     Compiler    : GCC 4.9.2 
 -------------------------------------- */
 #include <stdio.h>
+#include "applicationUI.c"
 
-char kodeWarna[1];
+chooseColorTheme() {
 
-void chooseColorTheme(){
-	system("cls");
+	char kodeWarna[2]
 	char temp[255];
-	FILE *pFile;
-		
-	pFile = fopen("Folder teks/ColorTheme.txt","r");
-	while(fgets(temp, sizeof(temp), pFile))
-		printf("%s", temp);
-	fclose(pFile);
 
-	scanf("%s",&kodeWarna);
+	showColorList();
+	scanf("%s", &kodeWarna);
+	showColorTheme(kodeWarna);
 }
 
 void showColorTheme(char kodeWarna[]){

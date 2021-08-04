@@ -14,25 +14,11 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdbool.h>
-#include "konversiGridLayout.c"
+#include "konversiUI.c"
 #include "sistemBilangan.c"
 #include "konversiWaktu.c"
 #include "suhu.c"
 
-void konversiMenu() {
-  system("cls");
-  printf("\n\n\t================================\n");
-  printf("\n\t\t  KONVERSI\n\n");
-  printf(" \t================================\n\n");
-  printf("                 [1] Suhu     \n");
-  printf("                 [2] Sistem Bilangan     \n");
-  printf("                 [3] Waktu     \n");
-  // printf("                 [4] History     \n");
-  // printf("                 [5] Konversi     \n");
-  // printf("                 [6] Credit     \n");
-  printf("                 [0] Back to Main Menu     \n\n");
-  printf("                Choose one : ");
-}
 
 void konversiSatuan() {
   // Batas Konversi

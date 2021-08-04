@@ -13,14 +13,10 @@
 
 #include "tree.h"
 #include "tree.c"
-#include "mainMenu.c"
 #include "calculatorMain.c"
-#include "help.c"
-#include "colorTheme.c"
-#include "credit.c"
 #include "history.c"
 #include "Konversi/konversiSatuan.c"
-#include "splashScreen.c"
+#include "applicationUI.c"
 
 int main(int argc, char** argv) {
 	// Show Splash Screen
@@ -56,7 +52,6 @@ int main(int argc, char** argv) {
             
             case 3 :
                 chooseColorTheme();
-                showColorTheme(kodeWarna);
                 while(true){
                     fflush(stdin);
                     char input = getch();

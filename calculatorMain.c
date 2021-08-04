@@ -13,6 +13,7 @@
 
 #include "calculator.h"
 #include "calculator.c"
+#include "applicationUI.c"
 
 void calculator() {
 	Calculator kalkulator;

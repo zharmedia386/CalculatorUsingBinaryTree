@@ -13,6 +13,21 @@
 
 #include <stdio.h>
 
+//KONVERSI
+//Menu
+void konversiMenu() {
+  system("cls");
+  printf("\n\n\t================================\n");
+  printf("\n\t\t  KONVERSI\n\n");
+  printf(" \t================================\n\n");
+  printf("                 [1] Suhu     \n");
+  printf("                 [2] Sistem Bilangan     \n");
+  printf("                 [3] Waktu     \n");
+  printf("                 [0] Back to Main Menu     \n\n");
+  printf("                Choose one : ");
+}
+
+//Grid Layout
 void konversiGridLayout(){
   system("cls");
   printf("\n\n\t\t   ================================\n");

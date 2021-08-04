@@ -11,8 +11,7 @@
     Compiler    : GCC 4.9.2 
 -------------------------------------- */
 
-#include "tree.h"
-#include "tree.c"
+
 #include "calculator.h"
 
 #ifndef calculator_C
